@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+ --heading-text: ;
+ --reg-text: ;
+ --brand-color: #1f0318;
+ --bg-color: #e5f2c9;
+ --accent-color: #8c705f;
+--accent-color-2: #7f534b;
+--accent-dark: #1e1a1d;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(-45deg, var(--brand-color), #000 );
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+
