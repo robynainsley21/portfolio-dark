@@ -1,13 +1,32 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./assets/components/Navbar";
+
+/**pages */
+import Home from "../src/assets/pages/Home.jsx";
+import About from "../src/assets/pages/About.jsx";
+import Projects from "../src/assets/pages/Projects.jsx";
+import Resume from "../src/assets/pages/Resume.jsx";
+import Contact from "../src/assets/pages/Contact.jsx";
+
 function App() {
   return (
     <>
-      <h1>Hello</h1>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
 
-      <div class="gradient-bg">
+      <div className="gradient-bg">
         <svg
           viewBox="0 0 100vw 100vw"
           xmlns="http://www.w3.org/2000/svg"
-          class="noiseBg"
+          className="noiseBg"
         >
           <filter id="noiseFilterBg">
             <feTurbulence
@@ -42,13 +61,13 @@ function App() {
             </filter>
           </defs>
         </svg>
-        <div class="gradients-container">
-          <div class="g1"></div>
-          <div class="g2"></div>
-          <div class="g3"></div>
-          <div class="g4"></div>
-          <div class="g5"></div>
-          <div class="interactive"></div>
+        <div className="gradients-container">
+          <div className="g1"></div>
+          <div className="g2"></div>
+          <div className="g3"></div>
+          <div className="g4"></div>
+          <div className="g5"></div>
+          <div className="interactive"></div>
         </div>
       </div>
     </>
