@@ -1,75 +1,150 @@
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+
+const MenuIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M4 6h16M4 12h16M4 18h16"
+    />
+  </svg>
+);
+
+const CloseIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M6 18L18 6M6 6l12 12"
+    />
+  </svg>
+);
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState("home");
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleNavigation = (page) => {
+    setCurrentPage(page);
+    setIsOpen(false);
+
+    console.log(`Navigated to ${page}`);
+  };
+
+  const menuItems = [
+    { title: "_home", path: "/" },
+    { title: "_about", path: "/about" },
+    { title: "_education&experience", path: "/resume" },
+    { title: "_projects", path: "/projects" },
+    { title: "_contact", path: "/contact" },
+  ];
+
   return (
-    <>
-      <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid p-3">
-          <Link class="navbar-brand" to="/">
+    <nav className="shadow-lg fixed w-full top-0 left-0 z-50">
+      {/* Main navbar container */}
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <button
+            onClick={() => handleNavigation("home")}
+            className="flex items-center space-x-3"
+          >
             <img
               src="https://robynainsley21.github.io/images/images/Portfolio logo (1).png"
               alt="logo"
               loading="lazy"
             />
-          </Link>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
           </button>
-          <div
-            class="offcanvas offcanvas-end"
-            tabindex="-1"
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-          >
-            <div class="offcanvas-header">
-              <Link class="navbar-brand" to="/">
-                <img
-                  src="https://robynainsley21.github.io/images/images/Portfolio logo (1).png"
-                  alt="logo"
-                  loading="lazy"
-                />
-              </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-8">
+            {menuItems.map((item) => (
               <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav fw-bolder ms-auto">
-                <li class="nav-item">
-                  <Link class="nav-link" aria-current="page" to="/about">
-                    About
-                  </Link>
-                </li>
-                <li class="nav-item">
-                  <Link class="nav-link" aria-current="page" to="/resume">
-                    Education & Experience
-                  </Link>
-                </li>
-                <li class="nav-item">
-                  <Link class="nav-link" aria-current="page" to="/projects">
-                    Projects
-                  </Link>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" to="/contact">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
+                key={item.id}
+                onClick={() => handleNavigation(item.id)}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200
+                ${
+                  currentPage === item.id
+                    ? "text-blue-600"
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                }`}
+              >
+                {item.title}
+              </button>
+            ))}
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              onClick={toggleMenu}
+              className="p-2 rounded-md violet_text hover:text-gray-900 hover:bg-gray-100 focus:outline-none"
+            >
+              {isOpen ? <CloseIcon /> : <MenuIcon />}
+            </button>
           </div>
         </div>
-      </nav>
-    </>
+      </div>
+
+      {/* Mobile Navigation */}
+      <div
+        className={`fixed inset-y-0 right-0 transform ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        } w-64 mobile-nav shadow-lg transition-transform duration-300 ease-in-out md:hidden z-50`}
+      >
+        <div className="flex flex-col h-full">
+          <div className="flex justify-end p-4">
+            <button
+              onClick={toggleMenu}
+              className="p-2 violet_text hover:text-gray-900 hover:bg-gray-100 focus:outline-none"
+            >
+              <CloseIcon />
+            </button>
+          </div>
+          <div className="flex flex-col space-y-2 p-4">
+            {menuItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleNavigation(item.id)}
+                className={`text-left px-4 py-2 text-sm font-medium transition-colors duration-200
+                ${
+                  currentPage === item.id
+                    ? "text-blue-600"
+                    : "violet_text hover:text-gray-900 hover:bg-gray-50"
+                }`}
+              >
+                {item.title}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 md:hidden"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+    </nav>
   );
 }
