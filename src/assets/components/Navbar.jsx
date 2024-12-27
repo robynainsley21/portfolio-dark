@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 
 const MenuIcon = () => (
   <svg
@@ -37,6 +40,7 @@ const CloseIcon = () => (
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState("home");
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -45,16 +49,16 @@ export default function Navbar() {
   const handleNavigation = (page) => {
     setCurrentPage(page);
     setIsOpen(false);
-
+    navigate(page);
     console.log(`Navigated to ${page}`);
   };
 
   const menuItems = [
-    { title: "_home", path: "/" },
-    { title: "_about", path: "/about" },
-    { title: "_education&experience", path: "/resume" },
-    { title: "_projects", path: "/projects" },
-    { title: "_contact", path: "/contact" },
+    { title: "_home", id: "/" },
+    { title: "_about", id: "/about" },
+    { title: "_education&experience", id: "/resume" },
+    { title: "_projects", id: "/projects" },
+    { title: "_contact", id: "/contact" },
   ];
 
   return (
@@ -63,23 +67,29 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <button
-            onClick={() => handleNavigation("home")}
-            className="flex items-center space-x-3"
+          <Link
+            to={menuItems[0].id}
+            key={menuItems[0].id}
+            className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200
+  ${
+    currentPage === menuItems[0].id
+      ? "text-blue-600"
+      : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+  }`}
           >
             <img
               src="https://robynainsley21.github.io/images/images/Portfolio logo (1).png"
               alt="logo"
               loading="lazy"
             />
-          </button>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {menuItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleNavigation(item.id)}
+              <Link
+              to={item.id}
+              key={item.id}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200
                 ${
                   currentPage === item.id
@@ -88,18 +98,18 @@ export default function Navbar() {
                 }`}
               >
                 {item.title}
-              </button>
+              </Link>
             ))}
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button
+            <Link
               onClick={toggleMenu}
               className="p-2 rounded-md violet_text hover:text-gray-900 hover:bg-gray-100 focus:outline-none"
             >
               {isOpen ? <CloseIcon /> : <MenuIcon />}
-            </button>
+            </Link>
           </div>
         </div>
       </div>

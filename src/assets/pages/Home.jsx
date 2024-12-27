@@ -21,15 +21,15 @@ export default function Home() {
               <h1 className="violet_text home_title">Robyn Carnow</h1>
             </h4>
 
-            <div class="content">
-              <div class="content__container">
-                <p class="content__container__text">A</p>
+            <div className="content">
+              <div className="content__container">
+                <p className="content__container__text">A</p>
 
-                <ul class="content__container__list">
-                  <li class="content__container__list__item">full-stack dev.</li>
-                  <li class="content__container__list__item">coffee lover.</li>
-                  <li class="content__container__list__item">reader.</li>
-                  <li class="content__container__list__item">Minecrafter.</li>
+                <ul className="content__container__list">
+                  <li className="content__container__list__item">full-stack dev.</li>
+                  <li className="content__container__list__item">coffee lover.</li>
+                  <li className="content__container__list__item">reader.</li>
+                  <li className="content__container__list__item">Minecrafter.</li>
                 </ul>
               </div>
             </div>
