@@ -1,6 +1,6 @@
 export default function AboutInterests() {
   return (
-    <div className="relative rounded-lg bg-slate-900 p-2">
+    <div className="relative rounded-lg interests_container p-1">
       {/* From Uiverse.io by emmanuelh-dev   */}
       <div className="relative flex text-center">
         <div className="flex pl-3.5 pt-3">
@@ -26,11 +26,11 @@ export default function AboutInterests() {
             <circle r="12" cy="12" cx="12"></circle>
           </svg>
         </div>
-        <span className="absolute inset-x-0 top-2 text-xs text-slate-500">
-          Interests of mine
+        <span className="absolute inset-x-0 top-2 text-sm text-slate-500">
+          aboutMe.html
         </span>
       </div>
-      <div className="mt-5 space-y-1.5 px-5 pb-10">
+      <div className="mt-7 space-y-1.5 px-4 pb-2">
         <p className="mt-4 font-mono text-xs font-normal tracking-wide text-violet-400">
           <span className="text-slate-500">&lt;</span>
           <span className="text-pink-400">AboutMe</span>
@@ -47,9 +47,8 @@ export default function AboutInterests() {
             <span className="text-slate-500">&gt;</span>
             <span className="relative inline-block px-1 before:absolute before:block before:rounded before:bg-blue-500/10">
               <span className="relative text-blue-400">
-                I am an open-minded and creative person, and enjoy learning
-                about the world of technology, the interest for which had
-                stemmed from curiosity of the new world.
+                I am an open-minded and creative person who enjoys learning
+                about the world of technology.
               </span>
             </span>
             <span className="text-slate-500">&lt;/</span>
@@ -102,6 +101,7 @@ export default function AboutInterests() {
           </span>
           <span className="text-slate-500">&gt;</span>
         </p>
+        <p className="ml-3 text-sm font-mono text-slate-500">//not necessarily in that order</p>
         <p className="ml-6 font-mono text-xs font-normal tracking-wide text-violet-400">
           <span className="text-slate-500">&lt;</span>
           <span className="text-pink-400">Text</span>

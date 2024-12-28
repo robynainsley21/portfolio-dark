@@ -8,27 +8,21 @@ export default function About() {
 
   return (
     <div className="page_container" id="about">
-      {/* <h1>A little about me.</h1>
       <div className="about_hero">
-        <div className="col-item">
+        <div className="col-item img_col">
+          {/* <h1>A little about me.</h1> */}
           <img
             loading="lazy"
-            src="https://robynainsley21.github.io/images/vue-portfolio-images/robyn-about.jpg"
+            src="https://robynainsley21.github.io/images/images/headshot.JPG"
             alt="about_img"
           />
+          <div>
+          </div>
         </div>
         <div className="col-item about_text">
-          <p>
-            
-          </p>
-
+          <AboutInterests />
         </div>
-      </div> */}
-
-      <AboutInterests />
-
-
-
+      </div>
 
       <div className="about_body">
         <h2 data-aos="fade-up">Interests of mine</h2>
@@ -57,9 +51,6 @@ export default function About() {
 <div className="grid_item"></div>
 <div className="grid_item"></div>
 </div> */}
-
-        
-
       </div>
       <div>{/* <Achievements data={data} loading={loading} /> */}</div>
     </div>
