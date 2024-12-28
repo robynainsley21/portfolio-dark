@@ -41,6 +41,10 @@ img[alt="logo"] {
 .violet_text {
   color: var(--violet);
 }
+
+.links{
+  text-decoration: none;
+}
 /* general */
 
 /* navbar */

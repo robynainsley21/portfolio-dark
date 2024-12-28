@@ -90,7 +90,7 @@ export default function Navbar() {
               <Link
               to={item.id}
               key={item.id}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 links
                 ${
                   currentPage === item.id
                     ? "text-blue-600"
