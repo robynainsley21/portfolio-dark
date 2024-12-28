@@ -1,6 +1,6 @@
 export default function AboutInterests() {
   return (
-    <div className="relative rounded-lg interests_container p-1">
+    <div className="relative rounded-lg hero_container p-1">
       {/* From Uiverse.io by emmanuelh-dev   */}
       <div className="relative flex text-center">
         <div className="flex pl-3.5 pt-3">

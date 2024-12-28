@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import AboutInterests from "../components/aboutInterests";
+import MusicPlayerSlider from "../components/musicComp";
 
 export default function About() {
   const [data, setData] = useState(null);
@@ -16,8 +17,7 @@ export default function About() {
             src="https://robynainsley21.github.io/images/images/headshot.JPG"
             alt="about_img"
           />
-          <div>
-          </div>
+          <div></div>
         </div>
         <div className="col-item about_text">
           <AboutInterests />
@@ -25,20 +25,14 @@ export default function About() {
       </div>
 
       <div className="about_body">
-        <h2 data-aos="fade-up">Interests of mine</h2>
-        <p className="fine-text text-center mb-5">Hover to view details</p>
+        <h1 data-aos="fade-up">Interests of mine</h1>
 
-        {/* <div className="interest-container row mb-5">
-          {data.about[1].interests.map((item) => {
-            return (
-              <InterestCard
-                title={item.title}
-                details={item.details}
-                img={item.img_url}
-              />
-            );
-          })}
-        </div> */}
+        <div className="interests_container">
+          <div className="interest_card">
+            <p>//listening to music</p>
+            <MusicPlayerSlider />
+          </div>
+        </div>
 
         {/* <div className="about_mindmap">
 <div className="grid_item"></div>

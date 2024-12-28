@@ -1,65 +1,33 @@
 import * as React from "react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+//components
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
 import IconButton from "@mui/material/IconButton";
-import Stack from "@mui/material/Stack";
 import PauseRounded from "@mui/icons-material/PauseRounded";
 import PlayArrowRounded from "@mui/icons-material/PlayArrowRounded";
 import FastForwardRounded from "@mui/icons-material/FastForwardRounded";
 import FastRewindRounded from "@mui/icons-material/FastRewindRounded";
-import VolumeUpRounded from "@mui/icons-material/VolumeUpRounded";
-import VolumeDownRounded from "@mui/icons-material/VolumeDownRounded";
 
-const WallPaper = styled("div")({
-  position: "absolute",
-  width: "100%",
-  height: "100%",
-  top: 0,
-  left: 0,
-  overflow: "hidden",
-  background: "linear-gradient(rgb(255, 38, 142) 0%, rgb(255, 105, 79) 100%)",
-  transition: "all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s",
-  "&::before": {
-    content: '""',
-    width: "140%",
-    height: "140%",
-    position: "absolute",
-    top: "-40%",
-    right: "-50%",
-    background:
-      "radial-gradient(at center center, rgb(62, 79, 249) 0%, rgba(62, 79, 249, 0) 64%)",
-  },
-  "&::after": {
-    content: '""',
-    width: "140%",
-    height: "140%",
-    position: "absolute",
-    bottom: "-50%",
-    left: "-30%",
-    background:
-      "radial-gradient(at center center, rgb(247, 237, 225) 0%, rgba(247, 237, 225, 0) 70%)",
-    transform: "rotate(30deg)",
-  },
-});
 
 const Widget = styled("div")(({ theme }) => ({
   padding: 16,
   borderRadius: 16,
   width: 343,
   maxWidth: "100%",
-  margin: "auto",
   position: "relative",
   zIndex: 1,
-  backgroundColor: "rgba(255,255,255,0.4)",
-  backdropFilter: "blur(40px)",
+  boxShadow: "rgba(0, 0, 0, 0.16) 0px 6px 12px, rgba(0, 0, 0, 0.23) 0px 6px 12px",
+  backgroundColor: "#011627",
+  backdropFilter: "blur(5px)",
   ...theme.applyStyles("dark", {
-    backgroundColor: "rgba(0,0,0,0.6)",
+    backgroundColor: "#011627",
   }),
 }));
-
+ 
 const CoverImage = styled("div")({
   width: 100,
   height: 100,
@@ -81,49 +49,67 @@ const TinyText = styled(Typography)({
 });
 
 export default function MusicPlayerSlider() {
-    const audioRef = useRef(null);
+  const audioRef = useRef(null);
   const duration = 200; // seconds
-  const [position, setPosition] = React.useState(32);
-  const [paused, setPaused] = React.useState(false);
+  const [position, setPosition] = useState(32);
+  const [paused, setPaused] = useState(true);
 
-    useEffect(()=> {
-        const interval = setInterval(() => {
-            if(audioRef.current){
-                setPosition(audioRef.current.currentTime)
-            }
-        }, 1000)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (audioRef.current && !paused) {
+        setPosition(audioRef.current.currentTime);
+      }
+    }, 1000);
 
-        return () => clearInterval(interval)
-    }, 1000)
+    return () => clearInterval(interval);
+  }, [paused]);
 
-  function formatDuration(value) {
+  const  formatDuration = (value) => {
     const minute = Math.floor(value / 60);
-    const secondLeft = value - minute * 60;
+    const secondLeft = Math.floor(value - minute * 60);
     return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`;
   }
 
+  const handlePlayPause = () => {
+    if(paused){
+      audioRef.current.play().catch((error) => {
+        console.error("Error playing audio:", error);
+      })
+    } else{
+      audioRef.current.pause();
+    }
+    setPaused(!paused);
+  }
+
+  const handleSliderChange = (_, value) => {
+    setPosition(value);
+    if(audioRef.current){
+      audioRef.current.currentTime = value;
+    }
+  }
+
   return (
-    <Box sx={{ width: "100%", overflow: "hidden", position: "relative", p: 3 }}>
+    <Box sx={{ width: "100%", overflow: "hidden", position: "relative", p: 1 }}>
       <Widget>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <CoverImage>
             <img
-              alt="can't win - Chilling Sunday"
-              src="/static/images/sliders/chilling-sunday.jpg"
+              alt="champion - kanye west"
+              src="https://robynainsley21.github.io/images/personal-portfolio/artworks-F2ido6SltCjd-0-t500x500.jpg"
             />
           </CoverImage>
-          <Box sx={{ ml: 1.5, minWidth: 0 }}>
+          <Box sx={{ ml: 1.5, minWidth: 0, color: "#5565e8" }}>
             <Typography
               variant="caption"
-              sx={{ color: "text.secondary", fontWeight: 500 }}
+              sx={{ color: "#5565e8", fontWeight: 500 }}
             >
-              Jun Pulse
+              click to play/pause 
             </Typography>
             <Typography noWrap>
-              <b>คนเก าเขาทำไว้ดี (Can&apos;t win)</b>
+              <b>Champion</b>
             </Typography>
             <Typography noWrap sx={{ letterSpacing: -0.25 }}>
-              Chilling Sunday &mdash; คนเก่าเขาทำไว้ดี
+              Kanye West
             </Typography>
           </Box>
         </Box>
@@ -134,9 +120,9 @@ export default function MusicPlayerSlider() {
           min={0}
           step={1}
           max={duration}
-          onChange={(_, value) => setPosition(value)}
+          onChange={handleSliderChange}
           sx={(t) => ({
-            color: "rgba(0,0,0,0.87)",
+            color: "#5565e8",
             height: 4,
             "& .MuiSlider-thumb": {
               width: 8,
@@ -170,6 +156,7 @@ export default function MusicPlayerSlider() {
             alignItems: "center",
             justifyContent: "space-between",
             mt: -2,
+            color: "#fff",
           }}
         >
           <TinyText>{formatDuration(position)}</TinyText>
@@ -182,7 +169,7 @@ export default function MusicPlayerSlider() {
             justifyContent: "center",
             mt: -1,
             "& svg": {
-              color: "#000",
+              color: "#5565e8",
               ...theme.applyStyles("dark", {
                 color: "#fff",
               }),
@@ -194,61 +181,20 @@ export default function MusicPlayerSlider() {
           </IconButton>
           <IconButton
             aria-label={paused ? "play" : "pause"}
-            onClick={() => setPaused(!paused)}
+            onClick={handlePlayPause}
           >
             {paused ? (
-              <PlayArrowRounded sx={{ fontSize: "3rem" }} />
-            ) : (<PauseRounded sx={{ fontSize: "3rem" }} />)}
+              <PlayArrowRounded sx={{ fontSize: "3rem", color: "#5565e8" }} />
+            ) : (
+              <PauseRounded sx={{ fontSize: "3rem" }} />
+            )}
           </IconButton>
           <IconButton aria-label="next song">
             <FastForwardRounded fontSize="large" />
           </IconButton>
         </Box>
-        <Stack
-          spacing={2}
-          direction="row"
-          sx={(theme) => ({
-            mb: 1,
-            px: 1,
-            "& > svg": {
-              color: "rgba(0,0,0,0.4)",
-              ...theme.applyStyles("dark", {
-                color: "rgba(255,255,255,0.4)",
-              }),
-            },
-          })}
-          alignItems="center"
-        >
-          <VolumeDownRounded />
-          <Slider
-            aria-label="Volume"
-            defaultValue={30}
-            sx={(t) => ({
-              color: "rgba(0,0,0,0.87)",
-              "& .MuiSlider-track": {
-                border: "none",
-              },
-              "& .MuiSlider-thumb": {
-                width: 24,
-                height: 24,
-                backgroundColor: "#fff",
-                "&::before": {
-                  boxShadow: "0 4px 8px rgba(0,0,0,0.4)",
-                },
-                "&:hover, &.Mui-focusVisible, &.Mui-active": {
-                  boxShadow: "none",
-                },
-              },
-              ...t.applyStyles("dark", {
-                color: "#fff",
-              }),
-            })}
-          />
-          <VolumeUpRounded />
-        </Stack>
-        <audio ref={audioRef} src="/path/to/your/song.mp3" preload="metadata" />
+        <audio ref={audioRef} src="https://robynainsley21.github.io/images/personal-portfolio/Kanye_West_-_Champion_(ColdMP3.com).mp3" preload="metadata" />
       </Widget>
-      <WallPaper />
     </Box>
   );
 }
