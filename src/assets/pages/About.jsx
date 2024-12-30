@@ -6,11 +6,13 @@ import MusicPlayerSlider from "../components/musicComp";
 import BookAnimation from "../components/bookAnimation";
 import PhoneAnimation from "../components/phoneComp";
 import CodeUI from "../components/codeUI";
+import Skills from "../components/Skills";
 
 export default function About() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  
   return (
     <div className="page_container" id="about">
       <div className="about_hero">
@@ -30,7 +32,6 @@ export default function About() {
 
       <div className="about_body">
         <h1 data-aos="fade-up">Interests of mine</h1>
-
         <div className="interests_container">
           <div className="interest_card music_comp">
           <p>//listening to music</p>
@@ -48,6 +49,11 @@ export default function About() {
             <CodeUI />
           </div>
         </div>
+      </div>
+
+      <div >
+        <h1>Skills & Badges</h1>
+        <Skills />
       </div>
       <div>{/* <Achievements data={data} loading={loading} /> */}</div>
     </div>
