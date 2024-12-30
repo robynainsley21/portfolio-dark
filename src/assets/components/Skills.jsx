@@ -62,27 +62,45 @@ export default function Skills() {
         id: 9,
         skill: "Python",
         level: "Beginner",
-        img_url: "https://robynainsley21.github.io/images/personal-portfolio/python.png",
+        img_url:
+          "https://robynainsley21.github.io/images/personal-portfolio/python.png",
       },
       {
         id: 10,
         skill: "C++",
         level: "Beginner",
-        img_url: "https://robynainsley21.github.io/images/personal-portfolio/c-.png",
+        img_url:
+          "https://robynainsley21.github.io/images/personal-portfolio/c-.png",
       },
     ],
     [
       {
         id: 1,
         skill: "SCRUM",
-        level: "to be added",
-        img_url: "https://robynainsley21.github.io/images/personal-portfolio/",
+        details: "to be added",
+        img_url:
+          "https://robynainsley21.github.io/images/personal-portfolio/SCRUM.png",
       },
       {
         id: 2,
         skill: "UI/UX Principles",
-        level: "to be added",
-        img_url: "https://robynainsley21.github.io/images/personal-portfolio/",
+        details: "to be added",
+        img_url:
+          "https://robynainsley21.github.io/images/personal-portfolio/UIUX.png",
+      },
+      {
+        id: 3,
+        skill: "Python Essentials",
+        details: "to be added",
+        img_url:
+          "https://robynainsley21.github.io/images/personal-portfolio/python-essentials-1.1.png",
+      },
+      {
+        id: 4,
+        skill: "C++ Essentials",
+        details: "to be added",
+        img_url:
+          "https://robynainsley21.github.io/images/personal-portfolio/c-essentials-1.png",
       },
     ],
   ]);
@@ -98,6 +116,20 @@ export default function Skills() {
               </div>
               {/* <p>{item.level}</p> */}
             </div>
+          );
+        })}
+      </div>
+      <div className="row g-3">
+        {data[1].map((item) => {
+          return (
+            <>
+              <div class="badge_card col">
+                  <div>
+                    <img src={item.img_url} alt="badge_img" />
+                  </div>
+                  <span class="title">GLASS EFFECT</span>
+              </div>
+            </>
           );
         })}
       </div>
