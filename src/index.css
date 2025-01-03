@@ -16,6 +16,7 @@
   --background-dark: #011627;
   --violet: #5565e8;
   --main-font: "Fira Code", monospace;
+  --heading-font: "Dela Gothic One", sans-serif;
   --purple: #3a015c;
   --glow: #055393;
 }
@@ -34,7 +35,7 @@ img[alt="logo"] {
 
   & h1 {
     color: var(--text-white);
-    font-family: "Dela Gothic One", sans-serif;
+    font-family: var(--heading-font) ;
     margin: 2rem;
   }
 }
@@ -55,6 +56,11 @@ img[alt="logo"] {
   padding: 0;
   margin: 0;
 }
+
+/* img[alt="right_arrow"]{
+  width: 1rem;
+  height: 1rem;
+} */
 /* general */
 
 /* navbar */
@@ -805,20 +811,16 @@ img[alt="skill_img"] {
 .skill_icon {
   width: 5rem;
   height: 6rem;
-  margin: auto;
+  margin: 1rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* color: var(--text-white); */
 
   & p{
     font-size: 14px;
     margin-top: .4rem;
   }
-
-  /* backdrop-filter: blur(30px);
-  background-color: var(--background-dark), 0.3; */
 }
 
 .skill_img_box {
@@ -829,10 +831,9 @@ img[alt="skill_img"] {
 }
 
 .languages {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  font-family: "Fira Code", monospace;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--main-font);
 }
 
 img[alt="badge_img"]{
@@ -845,10 +846,10 @@ img[alt="badge_img"]{
   color: white;
   position: relative;
   font-family: sans-serif;
-  margin: auto;
+  margin: 1rem auto;
   padding: auto;
-
-  width: 8rem;
+  font-family: var(--main-font);
+  width: 15rem;
   height: 15.875em;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.074);
@@ -866,6 +867,71 @@ img[alt="badge_img"]{
 .badge_card:hover {
   box-shadow: 0px 0px 20px 1px var(--glow);
   border: 1px solid var(--text-muted);
+}
+
+.badge_container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* From Uiverse.io by andrew-demchenk0 */ 
+.button {
+  --main-focus: #2d8cf0;
+  --font-color: #323232;
+  --bg-color-sub: #dedede;
+  --bg-color: #eee;
+  --main-color: #323232;
+  position: relative;
+  width: 60%;
+  height: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--text-muted);
+  box-shadow: 3px 3px var(--text-muted);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.button, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(22px);
+  color: var(--text-white);
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 20px;
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 100%;
+  transform: translateX(0);
+}
+
+.button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px var(--glow);
 }
 
 /*skills section*/

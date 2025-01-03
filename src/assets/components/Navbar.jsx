@@ -90,7 +90,7 @@ export default function Navbar() {
               <Link
               to={item.id}
               key={item.id}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 links
+                className={`px-3 py-2 violet_text rounded-md text-sm font-medium transition-colors duration-200 links
                 ${
                   currentPage === item.id
                     ? "text-blue-600"
@@ -106,7 +106,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <Link
               onClick={toggleMenu}
-              className="p-2 rounded-md violet_text hover:text-gray-900 hover:bg-gray-100 focus:outline-none"
+              className="p-2 violet_text rounded-md violet_text hover:text-gray-900 hover:bg-gray-100 focus:outline-none"
             >
               {isOpen ? <CloseIcon /> : <MenuIcon />}
             </Link>

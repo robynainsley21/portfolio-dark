@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function Skills() {
+  const [details, setDetails] =useState(false)
   const [data, setData] = useState([
     [
       {
@@ -104,6 +105,13 @@ export default function Skills() {
       },
     ],
   ]);
+
+  const toggleDetails = () => {
+    console.log("details", details);
+    setDetails(!details);
+    
+  }
+
   return (
     <div id="about_skills" className="white_text">
       <div className="languages row">
@@ -119,17 +127,39 @@ export default function Skills() {
           );
         })}
       </div>
-      <div className="row g-3">
+      <div className="badge_container">
         {data[1].map((item) => {
           return (
-            <>
-              <div class="badge_card col">
-                  <div>
-                    <img src={item.img_url} alt="badge_img" />
-                  </div>
-                  <span class="title">GLASS EFFECT</span>
+            <div class="badge_card">
+              <div>
+                <img src={item.img_url} alt="badge_img" />
               </div>
-            </>
+              <span class=" text-center">{item.skill}</span>
+              {/* From Uiverse.io by andrew-demchenk0  */}
+
+              <button class="button" type="button" onClick={toggleDetails}>
+                <span class="button__text">Details {">"}
+                </span>
+                <span class="button__icon">
+                  <svg
+                    class="svg"
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line x1="12" x2="12" y1="5" y2="19"></line>
+                    <line x1="5" x2="19" y1="12" y2="12"></line>
+                  </svg>
+                </span>
+              </button>
+              <span class=" text-center">{item.details}</span>
+            </div>
           );
         })}
       </div>
