@@ -7,6 +7,7 @@ import BookAnimation from "../components/bookAnimation";
 import PhoneAnimation from "../components/phoneComp";
 import CodeUI from "../components/codeUI";
 import Skills from "../components/Skills";
+import Achievements from "../components/achievementsComp";
 
 export default function About() {
   const [data, setData] = useState(null);
@@ -54,6 +55,10 @@ export default function About() {
       <div >
         <h1>Skills & Badges</h1>
         <Skills />
+      </div>
+      <div >
+        <h1>Achievements</h1>
+        <Achievements />
       </div>
       <div>{/* <Achievements data={data} loading={loading} /> */}</div>
     </div>
