@@ -991,7 +991,7 @@ img[alt="badge_img"]{
 #achievements {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
 }
 /* From Uiverse.io by eslam-hany */ 
 img[alt="achieve_img"]{
@@ -1003,7 +1003,7 @@ img[alt="achieve_img"]{
   position: relative;
   color: var(--text-white);
   margin: 2rem auto;
-  width: 230px;
+  width: 250px;
   height: 350px;
   background-color: rgba(255, 255, 255, 0.074);
   border: 1px solid rgba(255, 255, 255, 0.222);
@@ -1015,6 +1015,7 @@ img[alt="achieve_img"]{
   border-radius: 15px;
   cursor: pointer;
   text-align: center;
+  padding: .5rem;
 
   & p{
     font-size: 14px;
@@ -1026,10 +1027,6 @@ img[alt="achieve_img"]{
   border: 1px solid var(--text-muted);
   }
 }
-
-
-
-
 
 /* achievements section */
 /* ABOUT */

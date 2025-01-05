@@ -114,7 +114,7 @@ export default function Skills() {
 
   return (
     <div id="about_skills" className="white_text">
-      <div className="languages row">
+      <div className="languages">
         {data[0].map((item) => {
           return (
             <div class="skill_icon col-sm-6 col-md-3 col-lg-2" key={item.id}>
