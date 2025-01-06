@@ -30,13 +30,14 @@ img[alt="logo"] {
   width: 3rem;
 }
 
-:is(#home, #about, #resume) {
+:is(#home, #about, #resume, #projects, #contact) {
   background-color: var(--background-dark);
 
   & h1 {
     color: var(--text-white);
     font-family: var(--heading-font);
     margin: 2rem;
+    margin: 0;
   }
 }
 
@@ -1029,7 +1030,6 @@ img[alt="achieve_img"] {
     border: 1px solid var(--text-muted);
   }
 }
-
 /* achievements section */
 /* ABOUT */
 
@@ -1171,6 +1171,30 @@ img[alt="exp_img"]{
 /*experience*/
 /* RESUME */
 
+/* PROJECTS */
+#projects{
+  & h1 {
+    padding: 5rem 0 4rem 3rem;
+  }
+}
+
+.project_container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+img[alt="project_img"] {
+  width: 100%;
+  height: 100%;
+}
+
+.project_card{
+  height: 20rem;
+  width: 18rem;
+}
+
+/* PROJECTS */
+
 /* MOBILE */
 @media screen and (max-width: 768px) {
   :is(#home, #about, #resume){
@@ -1251,8 +1275,13 @@ img[alt="exp_img"]{
     width: 100%;
   }
   /*RESUME*/
-}
 
+  /*PROJECTS*/
+  .project_card{
+    margin-bottom: 5rem;
+  }
+  /*PROJECTS*/
+}
 /* MOBILE */
 
 /* LAPTOP */
@@ -1262,5 +1291,11 @@ img[alt="exp_img"]{
     height: 90vh;
   }
   /*ABOUT*/
+
+  /*PROJECTS*/
+  #projects{
+    height: 100vh;
+  }
+  /*PROJECTS*/
 }
 /* LAPTOP */
