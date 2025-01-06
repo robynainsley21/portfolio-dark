@@ -63,7 +63,7 @@ export default function Achievements() {
             <p>{item.details}</p>
           </div>
 <Link to={item.site} target="_blank" >
-<Button  />
+<Button text="View"  />
 </Link>
         </div>
       ))}
