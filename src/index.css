@@ -1174,13 +1174,19 @@ img[alt="exp_img"]{
 /* PROJECTS */
 #projects{
   & h1 {
-    padding: 5rem 0 4rem 3rem;
+    padding: 6rem 0 5rem 2rem;
+  }
+
+  & p{
+    font-family: var(--main-font);
+    margin: 0 0 4rem 2rem ;
   }
 }
 
 .project_container{
   display: flex;
   flex-wrap: wrap;
+  gap: 3rem;
 }
 
 img[alt="project_img"] {
@@ -1191,7 +1197,25 @@ img[alt="project_img"] {
 .project_card{
   height: 20rem;
   width: 18rem;
+  font-family: var(--main-font);
+  box-shadow: var(--glow) 0px 5px 15px;
+
+  &:hover{
+    transition: all 0.8s ease;
+    transform: scale(1.08);
+  }
 }
+
+.lang_container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+/* 
+.lang_width{
+  width: 6rem;
+} */
 
 /* PROJECTS */
 

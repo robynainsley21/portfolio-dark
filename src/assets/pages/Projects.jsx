@@ -37,7 +37,8 @@ export default function Projects() {
   ]);
   return (
     <div id="projects">
-      <h1>Projects</h1>
+      <h1>My most progressive projects</h1>
+      {/* <p className="text-white">My most progressive projects. </p> */}
       <div className="project_container">
         {projects.map((item) => (
           <>
@@ -50,9 +51,11 @@ export default function Projects() {
                 <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                   {item.projectName}
                 </h5>
-                <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                  put languages here
-                </p>
+                <div className="lang_container">
+                  {item.languages.map((lang) => (
+                    <div className="skill_pill">{lang}</div>
+                  ))}
+                </div>
               </div>
               <div class="p-6 pt-0 flex justify-around">
                 <Link target="_blank">

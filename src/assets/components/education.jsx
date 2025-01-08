@@ -52,7 +52,7 @@ export default function Education() {
                     <h6>Skills learned:</h6>
                     <div className="edu_skills">
                       {edu.skills.map((skill) => {
-                        return <div className="skill_pill ">{skill}</div>;
+                        return <div className="skill_pill">{skill}</div>;
                       })}
                     </div>
                   </div>
