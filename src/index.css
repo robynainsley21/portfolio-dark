@@ -26,7 +26,7 @@ img[alt="logo"] {
   width: 3rem;
 }
 
-:is(#home, #about, #resume, #projects, #contact) {
+:is(#home, #about, #resume, #projects, #contact, #footer) {
   background-color: var(--background-dark);
 
   & h1 {
@@ -1301,6 +1301,24 @@ img[alt="project_img"] {
 }
 /*contact details*/
 /* CONTACT */
+
+/*FOOTER*/
+#footer{
+  height: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--violet);
+  font-family: var(--main-font);
+}
+
+.footer_line{
+  width: 20%;
+  height: 1px;
+  content: '';
+  background-color: var(--violet);
+}
+/*FOOTER*/
 
 /* MOBILE */
 @media screen and (max-width: 768px) {
