@@ -21,6 +21,33 @@
   --glow: #055393;
 }
 
+/*scrollbar*/
+/* For WebKit browsers */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-dark); /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--violet); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted); /* Color of the thumb on hover */
+}
+
+
+/* For Firefox */
+.scrollable-element {
+  scrollbar-width: thin; /* Options: auto, thin */
+  scrollbar-color: #888 #f1f1f1; /* thumb color and track color */
+}
+/*scrollbar*/
+
 /* general */
 img[alt="logo"] {
   width: 3rem;
@@ -1212,11 +1239,11 @@ img[alt="project_img"] {
 
 /* CONTACT */
 #contact{
-  height: 100%;
+
 }
 
 #contact h1 {
-  padding: 6rem 0 5rem 2rem;
+  padding: 6rem 0 4rem 2rem;
 }
 
 .contact_container {
@@ -1414,7 +1441,6 @@ img[alt="project_img"] {
     justify-content: center;
 
     & .contact_text {
-      /* width: 60%; */
       font-size: 1rem;
       margin: auto;
     }

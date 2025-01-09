@@ -139,7 +139,7 @@ export default function Contact() {
             </div>
           </div>
         </StyledWrapper>
-        <div className="contact_text pb-5">
+        <div className="contact_text">
           <div className="contact_text_details">
             <div className="flex align-center p-auto">
               <div className="flex align-center justify-center p-auto">
