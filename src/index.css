@@ -1106,12 +1106,12 @@ img[alt="edu_img"] {
   }
 }
 
-.edu_skill_box{
+.edu_skill_box {
   padding-top: 1rem;
 }
 
 @media screen and (max-width: 935px) {
-  img[alt="edu_img"]{
+  img[alt="edu_img"] {
     margin: auto;
   }
 
@@ -1128,11 +1128,11 @@ img[alt="edu_img"] {
 }
 /*education*/
 /*experience*/
-.exp_container{
+.exp_container {
   display: flex;
 }
 
-.exp_card{
+.exp_card {
   width: 45%;
   height: 440px;
   /* display: flex;
@@ -1142,25 +1142,26 @@ img[alt="edu_img"] {
   padding: 1rem;
   /* border: 1px solid var(--text-muted); */
   border-radius: 7px;
-  box-shadow: rgba(0, 0, 0, 0.4) 2px 4px 6px, rgba(0, 0, 0, 0.3) 7px 13px 19px -9px, rgba(0, 0, 0, 0.2) 3px -6px 3px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 2px 4px 6px,
+    rgba(0, 0, 0, 0.3) 7px 13px 19px -9px, rgba(0, 0, 0, 0.2) 3px -6px 3px inset;
   transition: all 0.1s;
   color: var(--text-white);
   font-family: var(--main-font);
 }
 
-img[alt="exp_img"]{
+img[alt="exp_img"] {
   width: 12rem;
   margin: auto;
 }
 
-.exp_text{
+.exp_text {
   padding-left: 1rem;
   margin: 1rem;
   width: 50%;
   margin: 1rem auto;
 }
 
-.exp_btns{
+.exp_btns {
   display: flex;
   justify-content: space-evenly;
 }
@@ -1168,18 +1169,18 @@ img[alt="exp_img"]{
 /* RESUME */
 
 /* PROJECTS */
-#projects{
+#projects {
   & h1 {
     padding: 6rem 0 5rem 2rem;
   }
 
-  & p{
+  & p {
     font-family: var(--main-font);
-    margin: 0 0 4rem 2rem ;
+    margin: 0 0 4rem 2rem;
   }
 }
 
-.project_container{
+.project_container {
   display: flex;
   flex-wrap: wrap;
   gap: 3rem;
@@ -1190,19 +1191,19 @@ img[alt="project_img"] {
   height: 100%;
 }
 
-.project_card{
+.project_card {
   height: 20rem;
   width: 18rem;
   font-family: var(--main-font);
   box-shadow: var(--glow) 0px 5px 15px;
 
-  &:hover{
+  &:hover {
     transition: all 0.8s ease;
     transform: scale(1.08);
   }
 }
 
-.lang_container{
+.lang_container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -1210,31 +1211,27 @@ img[alt="project_img"] {
 /* PROJECTS */
 
 /* CONTACT */
-#contact{
-  height: 100vh;
-
-  & h1 {
-    padding: 6rem 0 5rem 2rem;
-  }
+#contact h1 {
+  padding: 6rem 0 5rem 2rem;
 }
 
-.contact_container{
+.contact_container {
   display: flex;
   justify-content: space-evenly;
 }
 
-.contact_text{
+.contact_text {
   font-family: var(--main-font);
   color: var(--text-white);
 }
 
-.contact_icons{
+.contact_icons {
   display: flex;
   justify-content: space-evenly;
 }
 
 /* icon buttons */
-/* From Uiverse.io by vinodjangid07 */ 
+/* From Uiverse.io by vinodjangid07 */
 .Btn {
   width: 4rem;
   height: 4rem;
@@ -1247,7 +1244,7 @@ img[alt="project_img"] {
   /* overflow: hidden; */
   border-radius: 7px;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .svgContainer {
@@ -1260,7 +1257,7 @@ img[alt="project_img"] {
   backdrop-filter: blur(0px);
   letter-spacing: 0.8px;
   border-radius: 10px;
-  transition: all .3s;
+  transition: all 0.3s;
   border: 1px solid rgba(156, 156, 156, 0.466);
 }
 
@@ -1273,7 +1270,7 @@ img[alt="project_img"] {
   z-index: -1;
   border-radius: 10px;
   pointer-events: none;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .Btn:hover .BG {
@@ -1287,11 +1284,17 @@ img[alt="project_img"] {
 }
 
 /* icon buttons */
+/*contact details*/
+.contact_text_span {
+  text-shadow: 0px 0px 7px var(--glow);
+  font-size: 1.5rem;
+}
+/*contact details*/
 /* CONTACT */
 
 /* MOBILE */
 @media screen and (max-width: 768px) {
-  :is(#home, #about, #resume){
+  :is(#home, #about, #resume) {
     & h1 {
       text-align: center;
       padding-left: 0;
@@ -1355,41 +1358,58 @@ img[alt="project_img"] {
   /*ABOUT*/
 
   /*RESUME*/
-  .exp_container{
+  .exp_container {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
   }
 
-  .exp_card{
+  .exp_card {
     width: 300px;
   }
 
-  .exp_text{
+  .exp_text {
     width: 100%;
   }
   /*RESUME*/
 
   /*PROJECTS*/
-  .project_card{
+  .project_card {
     margin-bottom: 5rem;
   }
   /*PROJECTS*/
+
+  /*CONTACT*/
+  .contact_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & .contact_text {
+      width: 70%;
+      font-size: 1rem;
+      margin: auto;
+    }
+  }
+
+  .contact_text_span{
+    
+  }
+
+  /*CONTACT*/
 }
 /* MOBILE */
 
 /* LAPTOP */
 @media screen and (min-width: 1024px) {
+  :is(#projects, #contact) {
+    height: 100vh;
+  }
+
   /*ABOUT*/
   .interests_container {
     height: 90vh;
   }
   /*ABOUT*/
-
-  /*PROJECTS*/
-  #projects{
-    height: 100vh;
-  }
-  /*PROJECTS*/
 }
 /* LAPTOP */

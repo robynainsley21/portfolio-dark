@@ -9,8 +9,10 @@ export default function Contact() {
     {
       number: "071 555 3954",
       github: "https://github.com/robynainsley21",
+      email: "rcarnowbusiness@gmail.com",
       linkedin: "https://www.linkedin.com/in/robyn-carnow-2b0762267/",
       location: "Cape Town, 7100",
+      discord: "robbierobs",
     },
   ]);
 
@@ -138,11 +140,72 @@ export default function Contact() {
           </div>
         </StyledWrapper>
         <div className="contact_text">
-          <p>{data[0].number}</p>
-          <p className="flex align-center justify-center">
-         
-            <span>{data[0].location}</span>
-          </p>
+          <div className="contact_text_details">
+            <div className="flex align-center p-auto">
+              <div className="flex align-center justify-center p-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.3rem"
+                  height="1.3rem"
+                  fill="currentColor"
+                  class="m-auto mx-2 bi bi-telephone-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+                  />
+                </svg>
+              </div>
+              <span className="m-2 contact_text_span">{data[0].number}</span>
+            </div>
+
+            <div className="flex align-center p-auto">
+              <div className="flex align-center justify-center p-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.3rem"
+                  height="1.3rem"
+                  fill="currentColor"
+                  class="m-auto mx-2 bi bi-pin-angle-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a6 6 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707s.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a6 6 0 0 1 1.013.16l3.134-3.133a3 3 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146" />
+                </svg>
+              </div>
+              <span className="m-2 contact_text_span">{data[0].location}</span>
+            </div>
+            <div className="flex align-center p-auto">
+              <div className="flex align-center justify-center p-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.3rem"
+                  height="1.3rem"
+                  fill="currentColor"
+                  className="m-auto mx-2 bi bi-envelope"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                </svg>
+              </div>
+              <span className="m-2 contact_text_span">{data[0].email}</span>
+            </div>
+            <div className="flex align-center p-auto">
+              <div className="flex align-center justify-center p-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.5rem"
+                  height="1.5rem"
+                  fill="currentColor"
+                  className="m-auto mx-2 bi bi-discord"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
+                </svg>
+              </div>
+              <span className="m-2 contact_text_span">{data[0].discord}</span>
+            </div>
+          </div>
           <div className="contact_icons">
             <Link to={data[0].linkedin} target="_blank">
               {/* From Uiverse.io by vinodjangid07   */}
