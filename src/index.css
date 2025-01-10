@@ -40,7 +40,6 @@
   background: var(--text-muted); /* Color of the thumb on hover */
 }
 
-
 /* For Firefox */
 .scrollable-element {
   scrollbar-width: thin; /* Options: auto, thin */
@@ -171,14 +170,6 @@ img[alt="logo"] {
 img[alt="home_img"] {
   width: 18rem;
 }
-
-/* text animation */
-
-
-
-
-
-/* text animation */
 
 /*hero icons*/
 /* From Uiverse.io by cybrejon */ 

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 const MenuIcon = () => (
   <svg
@@ -39,7 +37,7 @@ const CloseIcon = () => (
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState("home");
+  const [currentPage, setCurrentPage] = useState("/");
   const navigate = useNavigate();
 
   const toggleMenu = () => {
@@ -67,49 +65,43 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link
-            to={menuItems[0].id}
-            key={menuItems[0].id}
-            className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200
-  ${
-    currentPage === menuItems[0].id
-      ? "text-blue-600"
-      : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-  }`}
+          <button
+            onClick={() => handleNavigation("/")}
+            className="flex items-center h-8 w-auto"
           >
             <img
               src="https://robynainsley21.github.io/images/images/Portfolio logo (1).png"
               alt="logo"
               loading="lazy"
             />
-          </Link>
+          </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+               {/* Desktop Navigation */}
+               <div className="hidden md:flex space-x-8">
             {menuItems.map((item) => (
-              <Link
-              to={item.id}
-              key={item.id}
-                className={`px-3 py-2 violet_text rounded-md text-sm font-medium transition-colors duration-200 links
-                ${
-                  currentPage === item.id
-                    ? "text-blue-600"
-                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                }`}
+              <button
+                key={item.id}
+                onClick={() => handleNavigation(item.id)}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200
+                  ${
+                    currentPage === item.id
+                      ? "text-purple-600"
+                      : "text-white hover:text-purple-900 hover:bg-gray-50"
+                  }`}
               >
                 {item.title}
-              </Link>
+              </button>
             ))}
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <Link
-              onClick={toggleMenu}
-              className="p-2 violet_text rounded-md violet_text hover:text-gray-900 hover:bg-gray-100 focus:outline-none"
-            >
+          <button
+            onClick={toggleMenu}
+            className="md:hidden p-2 text-gray-600 hover:text-purple-900 hover:bg-gray-100 focus:outline-none rounded-md"
+          >
               {isOpen ? <CloseIcon /> : <MenuIcon />}
-            </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -124,7 +116,7 @@ export default function Navbar() {
           <div className="flex justify-end p-4">
             <button
               onClick={toggleMenu}
-              className="p-2 violet_text hover:text-gray-900 hover:bg-gray-100 focus:outline-none"
+              className="p-2 violet_text hover:text-gray-900 hover:bg-gray-100 focus:outline-none rounded-md"
             >
               <CloseIcon />
             </button>
@@ -137,8 +129,8 @@ export default function Navbar() {
                 className={`text-left px-4 py-2 text-sm font-medium transition-colors duration-200
                 ${
                   currentPage === item.id
-                    ? "text-blue-600"
-                    : "violet_text hover:text-gray-900 hover:bg-gray-50"
+                    ? "text-purple-600"
+                    : "text-white hover:text-purple-900 hover:bg-gray-50"
                 }`}
               >
                 {item.title}

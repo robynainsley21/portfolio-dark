@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import Button from "./button"
+import ButtonComp from "./button"
 
 export default function Achievements() {
   const [data, setData] = useState([
