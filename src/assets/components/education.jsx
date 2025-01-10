@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import ButtonComp from "./Button";
+import ButtonComp from "./button";
 export default function Education() {
     const [data, setData] = useState([
         {

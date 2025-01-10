@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ButtonComp from "./Button";
+import ButtonComp from "./button";
 
 export default function Experience() {
     const [data, setData] = useState([

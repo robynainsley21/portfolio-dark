@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import Button from "./Button";
+import ButtonComp from "./button";
+
 
 export default function Achievements() {
   const [data, setData] = useState([
@@ -63,7 +64,7 @@ export default function Achievements() {
             <p>{item.details}</p>
           </div>
 <Link to={item.site} target="_blank" >
-<Button text="View"  />
+<ButtonComp text="View"  />
 </Link>
         </div>
       ))}
