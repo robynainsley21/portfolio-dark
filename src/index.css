@@ -257,6 +257,7 @@ img[alt="about_img"] {
   justify-content: center;
   text-align: center;
   padding: auto;
+  color: var(--text-muted);
 
   & p {
     margin: 0;
@@ -462,7 +463,7 @@ img[alt="about_img"] {
 }
 
 .phone-int {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right bottom,
     #ff0000,
     #ff0045,
@@ -476,8 +477,9 @@ img[alt="about_img"] {
     #002e66,
     #001d3a,
     #020812
-  );
-  background-size: 200% 200%;
+  ); */
+  background-image: url("phone_bg.jpg");
+  background-size: 100%;
   background-position: 0% 0%;
   height: 100%;
   border-radius: 25px;
@@ -1325,6 +1327,10 @@ img[alt="project_img"] {
     display: flex;
     flex-direction: column;
     margin: auto;
+  }
+
+  .interest_card{
+    margin-bottom: 3rem;
   }
   /*interests section*/
   /*ABOUT*/

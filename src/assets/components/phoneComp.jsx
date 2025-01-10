@@ -9,8 +9,7 @@ export default function PhoneAnimation() {
         <div class="btn4"></div>
         <div class="phone-int">
           <div class="hello">
-            Hello
-            <span class="hidden">uiverse</span>
+            <span class="hidden"></span>
           </div>
         </div>
         <div class="top">

@@ -89,7 +89,7 @@ export default function MusicPlayerSlider() {
   }
 
   return (
-    <Box sx={{ width: "100%", overflow: "hidden", position: "relative", p: 1 }}>
+    <Box sx={{ width: "100%", overflow: "hidden", position: "relative", p: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
       <Widget>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <CoverImage>
