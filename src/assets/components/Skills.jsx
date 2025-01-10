@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import CustomizedDialogs from "../components/Modal";
+import ButtonComp from "./button"
+
 export default function Skills() {
   const [details, setDetails] =useState(false)
   const [data, setData] = useState([
@@ -78,28 +81,34 @@ export default function Skills() {
       {
         id: 1,
         skill: "SCRUM",
-        details: "to be added",
+        details: "Presented a \"Go to Market\" strategy for a digital product, successfully displaying a practical understanding of SCRUM principles.",
+        design: "https://www.figma.com/design/KWCqgjcGUFtz7fLC0u1mta/Stack-%26-Slice?node-id=39-9&p=f&t=QilO74bBRs7WI6qx-0",
+        prototype: "https://www.figma.com/proto/KWCqgjcGUFtz7fLC0u1mta/Stack-%26-Slice?node-id=108-656&starting-point-node-id=108%3A656&t=H65FxlRm7PCKxMAS-1",
         img_url:
           "https://robynainsley21.github.io/images/personal-portfolio/SCRUM.png",
       },
       {
         id: 2,
         skill: "UI/UX Principles",
-        details: "to be added",
+        details: "Ability to implement UI/UX principles into a website design using Figma software.",
+        design: "https://www.figma.com/design/p6ZVg2n7SqDXc5cGt48o6x/Software-Engineer-Portfolio?node-id=62-164&t=VKhyUeJsqyPdy3Dd-1",
+        prototype: "https://www.figma.com/proto/p6ZVg2n7SqDXc5cGt48o6x/Software-Engineer-Portfolio?node-id=138-510&p=f&t=QXqjLbf5JGBxwFuT-1&scaling=min-zoom&content-scaling=fixed&page-id=5%3A2&starting-point-node-id=138%3A986&show-proto-sidebar=1",
         img_url:
           "https://robynainsley21.github.io/images/personal-portfolio/UIUX.png",
       },
       {
         id: 3,
         skill: "Python Essentials",
-        details: "to be added",
+        details: "Achieved student level credential for completing the Python Essentials 1 course, provided by Cisco Networking Academy through Life Choices Academy.",
+        file: "https://drive.google.com/file/d/1CPF-Uoi_a1xKXssGzHIuv51LrelFh-lx/view?usp=sharing",
         img_url:
           "https://robynainsley21.github.io/images/personal-portfolio/python-essentials-1.1.png",
       },
       {
         id: 4,
         skill: "C++ Essentials",
-        details: "to be added",
+        details: "Achieved student level credential for completing the C++ Essentials 1 course, provided by Cisco Networking Academy through Life Choices Academy.",
+        file: "https://drive.google.com/file/d/1tTqzpBVLOocqvBaoRa6IF0-ALh7pL1CJ/view?usp=sharing",
         img_url:
           "https://robynainsley21.github.io/images/personal-portfolio/c-essentials-1.png",
       },
@@ -109,7 +118,6 @@ export default function Skills() {
   const toggleDetails = () => {
     console.log("details", details);
     setDetails(!details);
-    
   }
 
   return (
@@ -134,31 +142,13 @@ export default function Skills() {
               <div>
                 <img src={item.img_url} alt="badge_img" />
               </div>
-              <span class=" text-center">{item.skill}</span>
-              {/* From Uiverse.io by andrew-demchenk0  */}
-
-              <button class="button" type="button" onClick={toggleDetails}>
-                <span class="button__text">Details {">"}
-                </span>
-                <span class="button__icon">
-                  <svg
-                    class="svg"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <line x1="12" x2="12" y1="5" y2="19"></line>
-                    <line x1="5" x2="19" y1="12" y2="12"></line>
-                  </svg>
-                </span>
-              </button>
-              <span class=" text-center">{item.details}</span>
+              <span class=" text-center">{item.skill}</span>          
+              <CustomizedDialogs file={item.file} design={item.design} prototype={item.prototype} btn_text="Details" title={item.skill} details={item.details}/>
+            <div className="flex mt-2 align-center w-100">
+              {item.design && <ButtonComp site={item.design} text={"Design"}/>}
+              {item.prototype && <ButtonComp site={item.prototype} text={"Prototype"}/>}
+              {item.file && <ButtonComp site={item.file} text={"Certificate"}/>}
+            </div>
             </div>
           );
         })}

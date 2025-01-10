@@ -1,7 +1,7 @@
-export default function ButtonComp({text}) {
+export default function ButtonComp({text, site}) {
   return (
     /* From Uiverse.io by alexmaracinaru */
-    <button className="cta">
+    <button className="cta m-auto" onClick={() => window.open(site, "_blank")}>
       <span className="hover-underline-animation">{text} </span>
         <path
           id="Path_10"
