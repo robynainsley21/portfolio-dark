@@ -33,7 +33,7 @@ export default function Experience() {
                             <p>{item.duration}</p>
                         </div>
                         <div className="exp_btns">
-                        <ButtonComp text="Visit"/>
+                        <ButtonComp site={item.site} text="Visit"/>
                         </div>
                     </div>
                 ))}

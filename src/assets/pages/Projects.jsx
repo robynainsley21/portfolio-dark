@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ButtonComp from "../components/button";
 import { Link } from "react-router-dom";
+import CustomizedDialogs from "../components/Modal";
 export default function Projects() {
   const [projects, setProjects] = useState([
     {
@@ -58,15 +59,7 @@ export default function Projects() {
                 </div>
               </div>
               <div class="p-6 pt-0 flex justify-around">
-                <Link target="_blank">
-                  <ButtonComp
-                    data-ripple-light="true"
-                    type="button"
-                    class="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    text={"Read More"}
-                  >
-                  </ButtonComp>
-                </Link>
+                  <CustomizedDialogs details={item.description} btn_text='Details'/>
                 <Link target="_blank" to={item.hosted_link}>
                   <ButtonComp
                     data-ripple-light="true"

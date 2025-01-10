@@ -1358,6 +1358,11 @@ img[alt="project_img"] {
   /*RESUME*/
 
   /*PROJECTS*/
+  #projects h1{
+    padding: 5rem 0 3rem;
+    margin: 0;
+    text-align: center;
+  }
   .project_card {
     margin-bottom: 5rem;
   }
