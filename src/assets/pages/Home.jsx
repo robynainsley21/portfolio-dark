@@ -16,9 +16,6 @@ const TextSlider = () => {
   // Text animation effect
   useEffect(() => {
     const currentTitle = roles[currentTitleIndex];
-    console.log('Current Index:', currentTitleIndex);
-    console.log('Current Title:', currentTitle);
-    console.log('Is Typing:', isTyping);
 
     if (isTyping) {
       if (displayedText.length < currentTitle.length) {
@@ -41,7 +38,6 @@ const TextSlider = () => {
       } else {
         // Explicitly move to the next index
         const nextIndex = (currentTitleIndex + 1) % roles.length;
-        console.log('Moving to next index:', nextIndex);
         setCurrentTitleIndex(nextIndex);
         setIsTyping(true);
       }
@@ -58,8 +54,8 @@ const TextSlider = () => {
 
   return (
     <div className="flex items-center rounded-lg mb-3">
-      <div className="font-mono text-2xl">
-        <span className="violet_text">{displayedText}</span>
+      <div className="font-mono text-2xl animation_box">
+        <span className="violet_text text_animation">{displayedText}</span>
         <span className={`ml-1 ${showCaret ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>
           |
         </span>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import styled from "styled-components";
-import ButtonComp from "../components/Button";
+import ButtonComp from "../components/button";
 
 export default function Contact() {
   const [data, setData] = useState([

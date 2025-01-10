@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ButtonComp from "../components/Button";
+import ButtonComp from "../components/button";
 import { Link } from "react-router-dom";
 export default function Projects() {
   const [projects, setProjects] = useState([

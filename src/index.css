@@ -1145,9 +1145,7 @@ img[alt="project_img"] {
 /* PROJECTS */
 
 /* CONTACT */
-#contact{
 
-}
 
 #contact h1 {
   padding: 6rem 0 4rem 2rem;
@@ -1255,6 +1253,14 @@ img[alt="project_img"] {
 /*FOOTER*/
 
 /* MOBILE */
+/* @media screen and (min-width: 600px) and (max-width: 768px){
+  .home_hero {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+  }
+
+} */
 @media screen and (max-width: 768px) {
   :is(#about, #resume) {
     & h1 {
@@ -1267,7 +1273,7 @@ img[alt="project_img"] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 4.5rem;
+    padding: 2rem;
   }
 
   .home_title {
@@ -1275,17 +1281,27 @@ img[alt="project_img"] {
   }
 
   img[alt="home_img"] {
-    width: 14rem;
+    width: 13rem;
+    margin: 3rem 0 1rem;
   }
 
-  .home_intro {
-    margin: 4rem 0.8rem;
-  }
+ .home_intro{
+  width: 100%;
+  margin: 0;
+ }
+
+ .text_animation{
+  font-size: 1.2rem;
+ }
 
   .content {
     font-size: 1rem;
     font-weight: normal;
     font-family: var(--main-font);
+  }
+
+  .home_details{
+    margin-top: 2rem;
   }
   /* HOME */
 
