@@ -18,7 +18,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-export default function CustomizedDialogs({btn_text, design, prototype, title, details}) {
+export default function CustomizedDialogs({btn_text, title, details}) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {

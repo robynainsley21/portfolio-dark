@@ -125,7 +125,7 @@ export default function Skills() {
       <div className="languages">
         {data[0].map((item) => {
           return (
-            <div class="skill_icon col-sm-6 col-md-3 col-lg-2" key={item.id}>
+            <div class="skill_icon" key={item.id}>
               <div className="skill_img_box">
                 <img src={item.img_url} alt="skill_img" />
                 <p>{item.skill}</p>

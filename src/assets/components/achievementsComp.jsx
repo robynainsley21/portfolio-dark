@@ -46,7 +46,7 @@ export default function Achievements() {
       title: "Deputy Head Girl",
       location: "Tuscany Glen Secondary",
       details: "Assisted in student tutoring and disciplining.",
-      date: "Year 2014",
+      date: "Year 2018",
       img_url: "https://robynainsley21.github.io/images/",
     },
   ]);

@@ -784,9 +784,9 @@ img[alt="skill_img"] {
 }
 
 .skill_icon {
-  width: 5rem;
-  height: 6rem;
-  margin: 1rem auto;
+  width: 4rem;
+  height: 5rem;
+  margin: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -808,6 +808,8 @@ img[alt="skill_img"] {
 .languages {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   font-family: var(--main-font);
 }
 
@@ -1340,6 +1342,12 @@ img[alt="project_img"] {
 
   .exp_text {
     width: 100%;
+  }
+
+  .skill_icon{
+    width: 3rem;
+    height: 4rem;
+    margin: 1.5rem;
   }
   /*RESUME*/
 

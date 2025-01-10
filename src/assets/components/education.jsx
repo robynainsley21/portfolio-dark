@@ -11,7 +11,7 @@ export default function Education() {
           site: "https://lifechoices.co.za/life-choices-academy/",
           img_url:
             "https://robynainsley21.github.io/images/personal-portfolio/life-choices.jpg",
-          skills: ["Vue.js", "Node.js", "MySQL", "Teamwork"],
+          skills: ["Vue.js", "Node.js", "MySQL", "Teamwork", "SCRUM", "UI/UX"],
         },
         {
           id: 2,
