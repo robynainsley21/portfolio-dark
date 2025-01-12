@@ -13,7 +13,7 @@ export default function Achievements() {
       details: "Graduated Full-stack Developer",
       date: "September 2024",
       img_url: "https://robynainsley21.github.io/images/vue-portfolio-images/fullstack_certificate.jpg",
-      site: "",
+      site: "https://drive.google.com/file/d/1EbKPbo0OO4i-t4zd7WUq6JnD-Dilo40B/view?usp=sharing",
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export default function Achievements() {
       details: "Achieved 93% in Vue.js Portfolio project.",
       date: "Year 2024",
       img_url: "https://robynainsley21.github.io/images/vue-portfolio-images/vue_certifivate.jpg",
-      site: "",
+      site: "https://drive.google.com/file/d/16t1o1i-OS3dQ41jN7yozIbaCMQjMg_f-/view?usp=sharing",
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ export default function Achievements() {
       details: "Achieved 90% in E-commerce project.",
       date: "Year 2024",
       img_url: "https://robynainsley21.github.io/images/vue-portfolio-images/js_certificate.jpg",
-      site: "",
+      site: "https://drive.google.com/file/d/1e3DEdpqCXsUXlIVQhudDWZYs7cffca_t/view?usp=sharing",
     },
     {
       id: 4,
