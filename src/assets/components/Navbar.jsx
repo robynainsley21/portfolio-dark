@@ -76,8 +76,8 @@ export default function Navbar() {
             />
           </button>
 
-               {/* Desktop Navigation */}
-               <div className="hidden md:flex space-x-8">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-8">
             {menuItems.map((item) => (
               <button
                 key={item.id}
@@ -96,10 +96,10 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="md:hidden p-2 text-gray-600 hover:text-purple-900 hover:bg-gray-100 focus:outline-none rounded-md"
-          >
+            <button
+              onClick={toggleMenu}
+              className="md:hidden p-2 text-gray-600 hover:text-purple-900 hover:bg-gray-100 focus:outline-none rounded-md"
+            >
               {isOpen ? <CloseIcon /> : <MenuIcon />}
             </button>
           </div>

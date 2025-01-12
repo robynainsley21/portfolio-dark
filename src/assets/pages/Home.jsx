@@ -85,7 +85,7 @@ export default function Home() {
               {/* From Uiverse.io by cybrejon  */}
               <a
                 className="resume_download"
-                href="public\Digital Portfolio Guidline (1).pdf"
+                href="https://robynainsley21.github.io/images/personal-portfolio/Robyn_Carnow_Resume (1).pdf"
                 download
               >
                 <svg

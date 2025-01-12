@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ButtonComp from "../components/button";
-import { Link } from "react-router-dom";
 import CustomizedDialogs from "../components/Modal";
 export default function Projects() {
   const [projects, setProjects] = useState([
@@ -17,13 +16,13 @@ export default function Projects() {
     },
     {
       id: 2,
-      img_url: "https://robynainsley21.github.io/images/vue-portfolio-images/",
-      languages: ["Vue.js", "MySQL", "Node.js", "State management"],
+      img_url: "https://robynainsley21.github.io/images/vue-portfolio-images/podify.png",
+      languages: ["React.js", "API", "State management"],
       description:
-        "A collaboration project, this website features electronic fitness products. It is responsive, with data stored in a database.",
-      projectName: "TechFit",
-      github: "https://github.com/robynainsley21/node-eomp.git",
-      hosted_link: "find link",
+        "My first application created with React. It receives data from an API and displays podcasts with their respective details.",
+      projectName: "Podify",
+      github: "https://github.com/robynainsley21/PodcastApp.git",
+      hosted_link: "https://podcast-app-cyan.vercel.app/",
     },
     {
       id: 3,
@@ -38,14 +37,13 @@ export default function Projects() {
   ]);
   return (
     <div id="projects">
-      <h1>My most progressive projects</h1>
-      {/* <p className="text-white">My most progressive projects. </p> */}
+      <h1>My most progressive coding projects</h1>
       <div className="project_container">
         {projects.map((item) => (
           <>
             {/* From Uiverse.io by Yaya12085   */}
-            <div class="relative project_card bg-white m-auto flex flex-col rounded-xl bg-clip-border text-gray-700 shadow-md">
-              <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+            <div class="relative project_card  m-auto flex flex-col rounded-xl bg-clip-border text-gray-700 shadow-md">
+              <div class="relative mx-4 -mt-6  rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
                 <img src={item.img_url} alt="project_img" />
               </div>
               <div class="p-6">
@@ -58,17 +56,16 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
-              <div class="p-6 pt-0 flex justify-around">
+              <div class="p-6 pt-0 flex align-center justify-around">
                   <CustomizedDialogs details={item.description} btn_text='Details'/>
-                <Link target="_blank" to={item.hosted_link}>
                   <ButtonComp
                     data-ripple-light="true"
                     type="button"
-                    class="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    className="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                     text={"Visit"}
+                    site={item.hosted_link}
                   >
                   </ButtonComp>
-                </Link>
               </div>
             </div>
           </>

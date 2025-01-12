@@ -21,7 +21,7 @@ export default function About() {
           {/* <h1>A little about me.</h1> */}
           <img
             loading="lazy"
-            src="https://robynainsley21.github.io/images/images/headshot.JPG"
+            src="https://robynainsley21.github.io/images/vue-portfolio-images/robyn-about.jpg"
             alt="about_img"
           />
           <div></div>

@@ -46,7 +46,7 @@ export default function Education() {
                     <h5>{edu.edu_name}</h5>
                     <p>{edu.date}</p>
                     <p>{edu.details}</p>
-                    <ButtonComp text="Visit" />
+                    <ButtonComp site={edu.site} text="Visit" />
                   </div>
                   <div className="edu_skill_box">
                     <h6>Skills learned:</h6>

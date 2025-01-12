@@ -58,8 +58,11 @@ img[alt="logo"] {
   & h1 {
     color: var(--text-white);
     font-family: var(--heading-font);
-    margin: 2rem;
   }
+}
+
+:is(#about, #resume, #contact, #footer) h1{
+ margin: 2.5rem;
 }
 
 .violet_text {
@@ -82,13 +85,18 @@ img[alt="logo"] {
 /*button*/
 /* From Uiverse.io by alexmaracinaru */
 .cta {
-  border: 1px solid var(--violet);
-  padding: 7px 10px;
+  border: 1px solid rgba(25, 118, 210, 0.5);
+  padding: 5px 10px;
   background: none;
-  margin-inline: .5rem;
+  font-size: 0.875rem;
+  min-width: 64px;
   cursor: pointer;
-  border-radius: 5px;
-  font-family: var(--main-font);
+  border-radius: 4px;
+  line-height: 1.75;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  color: #1976d2;
+  text-decoration: none;
+  transition: rgba(25, 118, 210, 0.5) 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
 .cta span {
@@ -96,12 +104,13 @@ img[alt="logo"] {
   letter-spacing: 2px;
   font-size: 14px;
   text-transform: uppercase;
-  color: var(--violet);
+  
 }
 
 .cta svg {
   transform: translateX(-8px);
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .cta:hover svg {
@@ -110,30 +119,7 @@ img[alt="logo"] {
 
 .cta:active svg {
   transform: scale(0.9);
-}
-
-.hover-underline-animation {
-  position: relative;
-  color: var(--violet);
-  padding-bottom: 20px;
-}
-
-.hover-underline-animation:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--violet);
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.cta:hover .hover-underline-animation:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+  text-decoration: none;
 }
 
 /*button*/
@@ -150,6 +136,10 @@ img[alt="logo"] {
 #home {
   height: 100vh;
   color: var(--text-muted);
+
+  & h1{
+    margin: 0;
+  }
 }
 
 .home_hero {
@@ -1099,33 +1089,29 @@ img[alt="exp_img"] {
 /* RESUME */
 
 /* PROJECTS */
-#projects {
-  & h1 {
+#projects h1 {
     padding: 6rem 0 5rem 2rem;
   }
-
-  & p {
-    font-family: var(--main-font);
-    margin: 0 0 4rem 2rem;
-  }
-}
 
 .project_container {
   display: flex;
   flex-wrap: wrap;
   gap: 3rem;
+  margin: 0;
 }
 
 img[alt="project_img"] {
   width: 100%;
-  height: 100%;
+  height: 7rem;
+  border-radius: 10px;
 }
 
 .project_card {
-  height: 20rem;
+  height: 25rem;
   width: 18rem;
   font-family: var(--main-font);
   box-shadow: var(--glow) 0px 5px 15px;
+  background-color: #F9EDCC ;
 
   &:hover {
     transition: all 0.8s ease;
