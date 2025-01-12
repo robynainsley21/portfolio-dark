@@ -17,7 +17,7 @@ export default function Projects() {
     {
       id: 2,
       img_url: "https://robynainsley21.github.io/images/vue-portfolio-images/podify.png",
-      languages: ["React.js", "API", "State management"],
+      languages: ["React.js", "API integration", "State management"],
       description:
         "My first application created with React. It receives data from an API and displays podcasts with their respective details.",
       projectName: "Podify",
