@@ -87,6 +87,7 @@ export default function Home() {
                 className="resume_download"
                 href="https://robynainsley21.github.io/images/personal-portfolio/Robyn_Carnow_Resume (1).pdf"
                 download
+                target="_blank"
               >
                 <svg
                   viewBox="0 0 256 256"

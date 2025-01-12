@@ -17,7 +17,7 @@ export default function Contact() {
     message: ''
   });
 
-  const [data, setData] = useState([
+  const [data] = useState([
     {
       number: "071 555 3954",
       github: "https://github.com/robynainsley21",
@@ -28,41 +28,50 @@ export default function Contact() {
     },
   ]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus({ submitted: true, error: false, message: 'Sending...' });
 
-    emailjs.send(
-      'service_pzxuxjd',  //EmailJS Services
-      'template_cwb1oni', //EmailJS Templates
-      {
+    try {
+      const templateParams = {
         from_name: `${formData.firstName} ${formData.lastName}`,
+        to_name: "Robyn",
         message: formData.message,
         reply_to: data[0].email,
-      },
-      '7cTYrrwNxT-VbzAZc'   // EmailJS account
-    )
-    .then((response) => {
-      setStatus({
-        submitted: true,
-        error: false,
-        message: 'Message sent successfully!'
-      });
-      setFormData({ firstName: '', lastName: '', message: '' });
-    })
-    .catch((err) => {
+        from_email: data[0].email
+      };
+
+      const response = await emailjs.send(
+        'service_pzxuxjd',
+        'template_cwb1oni',
+        templateParams,
+        '7cTYrrwNxT-VbzAZc'
+      );
+
+      if (response.status === 200) {
+        setStatus({
+          submitted: true,
+          error: false,
+          message: 'Message sent successfully!'
+        });
+        setFormData({ firstName: '', lastName: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (err) {
+      console.error('EmailJS Error:', err);
       setStatus({
         submitted: false,
         error: true,
         message: 'Failed to send message. Please try again.'
       });
-    });
-  }
+    }
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
+    setFormData((prevData) => ({
+      ...prevData,
       [name]: value
     }));
   };
@@ -187,7 +196,7 @@ export default function Contact() {
               <div className="inputBox">
                 <input 
                   type="text" 
-                  required="required"
+                  required
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleInputChange}
@@ -197,7 +206,7 @@ export default function Contact() {
               <div className="inputBox">
                 <input 
                   type="text" 
-                  required="required"
+                  required
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleInputChange}
@@ -207,7 +216,7 @@ export default function Contact() {
               <div className="inputBox">
                 <input 
                   type="text" 
-                  required="required"
+                  required
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}

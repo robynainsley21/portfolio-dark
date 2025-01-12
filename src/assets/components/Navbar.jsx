@@ -56,7 +56,7 @@ export default function Navbar() {
     { title: "_about", id: "/about" },
     { title: "_education&experience", id: "/resume" },
     { title: "_projects", id: "/projects" },
-    { title: "_contact", id: "/contact" },
+    // { title: "_contact", id: "/contact" },
   ];
 
   return (
