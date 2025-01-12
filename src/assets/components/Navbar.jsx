@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const MenuIcon = () => (
   <svg
@@ -77,7 +77,7 @@ export default function Navbar() {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className=" desktop sm:hidden md:flex space-x-8">
             {menuItems.map((item) => (
               <button
                 key={item.id}

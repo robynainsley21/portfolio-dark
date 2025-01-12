@@ -1244,6 +1244,10 @@ img[alt="project_img"] {
 
 } */
 @media screen and (max-width: 768px) {
+  .desktop{
+    display: none;
+  }
+  
   :is(#about, #resume) {
     & h1 {
       text-align: center;
