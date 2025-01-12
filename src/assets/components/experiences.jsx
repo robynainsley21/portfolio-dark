@@ -26,7 +26,7 @@ export default function Experience() {
             <div className="exp_container">
                 {data.map((item) => (
                     <div className="exp_card" key={item.id}>
-                        <img src={item.img_url} alt="exp_img" />
+                        <img src={item.img_url} alt="exp_img"  loading="lazy"/>
                         <div className="exp_text">
                             <h5>{item.title}</h5>
                             <p>{item.company}</p>

@@ -41,7 +41,7 @@ export default function Education() {
             {data.map((edu) => {
               return (
                 <div className="edu_card" key={edu.id}>
-                  <img src={edu.img_url} alt="edu_img" />
+                  <img src={edu.img_url} alt="edu_img"  loading="lazy"/>
                   <div className="edu_text">
                     <h5>{edu.edu_name}</h5>
                     <p>{edu.date}</p>

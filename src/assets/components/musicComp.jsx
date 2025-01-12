@@ -96,6 +96,7 @@ export default function MusicPlayerSlider() {
             <img
               alt="champion - kanye west"
               src="https://robynainsley21.github.io/images/personal-portfolio/artworks-F2ido6SltCjd-0-t500x500.jpg"
+             loading="lazy"
             />
           </CoverImage>
           <Box sx={{ ml: 1.5, minWidth: 0, color: "#5565e8" }}>

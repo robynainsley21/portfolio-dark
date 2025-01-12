@@ -129,7 +129,6 @@ img[alt="logo"] {
 .mobile-nav {
   backdrop-filter: blur(15px);
 }
-
 /* navbar */
 
 /* HOME */
@@ -140,6 +139,11 @@ img[alt="logo"] {
   & h1{
     margin: 0;
   }
+}
+
+.home_contact_btn{
+  height: 3.3rem;
+  color: var(--text-white);
 }
 
 .home_hero {
@@ -159,7 +163,7 @@ img[alt="logo"] {
 }
 
 img[alt="home_img"] {
-  width: 18rem;
+  width: 20rem;
 }
 
 /*hero icons*/
@@ -922,8 +926,8 @@ img[alt="achieve_img"] {
   position: relative;
   color: var(--text-white);
   margin: 2rem auto;
-  width: 250px;
-  height: 350px;
+  width: 300px;
+  height: 30rem;
   background-color: rgba(255, 255, 255, 0.074);
   border: 1px solid rgba(255, 255, 255, 0.222);
   display: flex;
@@ -938,6 +942,10 @@ img[alt="achieve_img"] {
 
   & p {
     font-size: 14px;
+  }
+
+  &:last-child img{
+    width: 10rem;
   }
 
   &:hover {
@@ -1127,8 +1135,6 @@ img[alt="project_img"] {
 /* PROJECTS */
 
 /* CONTACT */
-
-
 #contact h1 {
   padding: 6rem 0 4rem 2rem;
 }
@@ -1218,11 +1224,22 @@ img[alt="project_img"] {
 
 /*FOOTER*/
 #footer{
-  height: 3rem;
+  color: var(--violet);
+  padding-bottom: 1rem;
+}
+
+.contact_footer_container{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 14px;
+  padding: 1rem 0;
+}
+
+.footer_copyright{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: var(--violet);
   font-family: var(--main-font);
 }
 
@@ -1232,22 +1249,35 @@ img[alt="project_img"] {
   content: '';
   background-color: var(--violet);
 }
+
+.linkedin_btn{
+  text-decoration: none;
+  color: var(--violet);
+  border: 1px solid var(--violet);
+  border-radius: 6px;
+  transition: all 0.3s;
+  
+  &:hover{
+    background-color: var(--violet);
+    color: var(--text-white);
+  }
+}
 /*FOOTER*/
 
 /* MOBILE */
-/* @media screen and (min-width: 600px) and (max-width: 768px){
-  .home_hero {
-    display: flex;
-    align-items: center;
-    padding: 2rem;
-  }
-
-} */
 @media screen and (max-width: 768px) {
   .desktop{
     display: none;
   }
+
+  .contact_footer_container{
+    flex-wrap: wrap;
+  }
   
+  .linkedin_btn{
+    margin: .5rem;
+  }
+
   :is(#about, #resume) {
     & h1 {
       text-align: center;
@@ -1267,7 +1297,7 @@ img[alt="project_img"] {
   }
 
   img[alt="home_img"] {
-    width: 13rem;
+    width: 14rem;
     margin: 3rem 0 1rem;
   }
 

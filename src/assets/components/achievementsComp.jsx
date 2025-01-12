@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+
 import ButtonComp from "./button"
 
 export default function Achievements() {
@@ -11,8 +12,8 @@ export default function Achievements() {
       location: "Life Choices Academy",
       details: "Graduated Full-stack Developer",
       date: "September 2024",
-      img_url: "https://robynainsley21.github.io/images/",
-      site: "https://robynainsley21.github.io/images/",
+      img_url: "https://robynainsley21.github.io/images/vue-portfolio-images/fullstack_certificate.jpg",
+      site: "",
     },
     {
       id: 2,
@@ -20,8 +21,8 @@ export default function Achievements() {
       location: "Life Choices Academy",
       details: "Achieved 93% in Vue.js Portfolio project.",
       date: "Year 2024",
-      img_url: "https://robynainsley21.github.io/images/",
-      site: "https://robynainsley21.github.io/images/",
+      img_url: "https://robynainsley21.github.io/images/vue-portfolio-images/vue_certifivate.jpg",
+      site: "",
     },
     {
       id: 3,
@@ -29,8 +30,8 @@ export default function Achievements() {
       location: "Life Choices Academy",
       details: "Achieved 90% in E-commerce project.",
       date: "Year 2024",
-      img_url: "https://robynainsley21.github.io/images/",
-      site: "https://robynainsley21.github.io/images/",
+      img_url: "https://robynainsley21.github.io/images/vue-portfolio-images/js_certificate.jpg",
+      site: "",
     },
     {
       id: 4,
@@ -40,22 +41,14 @@ export default function Achievements() {
       date: "August 2023",
       img_url: "Screenshot 2025-01-05 151436.png",
       site: "https://drive.google.com/file/d/16JGZv8fYp1kQCkZWOkF52AdpP2hqIYfg/view?usp=sharing",
-    },
-    {
-      id: 5,
-      title: "Deputy Head Girl",
-      location: "Tuscany Glen Secondary",
-      details: "Assisted in student tutoring and disciplining.",
-      date: "Year 2018",
-      img_url: "https://robynainsley21.github.io/images/",
-    },
+    }
   ]);
   return (
     <div id="achievements">
       {/* From Uiverse.io by eslam-hany   */}
       {data.map((item) => (
         <div class="achieve_card">
-          {item.img_url && <img src={item.img_url} alt="achieve_img" />}
+          {item.img_url && <img src={item.img_url} alt="achieve_img" loading="lazy"/>}
           <div className="achieve_text">
             <h5>{item.title}</h5>
             <p>{item.location}</p>

@@ -44,7 +44,7 @@ export default function Projects() {
             {/* From Uiverse.io by Yaya12085   */}
             <div class="relative project_card  m-auto flex flex-col rounded-xl bg-clip-border text-gray-700 shadow-md">
               <div class="relative mx-4 -mt-6  rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
-                <img src={item.img_url} alt="project_img" />
+                <img src={item.img_url} alt="project_img"  loading="lazy"/>
               </div>
               <div class="p-6">
                 <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
