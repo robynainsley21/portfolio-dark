@@ -1,20 +1,71 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 import ButtonComp from "../components/button";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    message: ''
+  });
+
+  const [status, setStatus] = useState({
+    submitted: false,
+    error: false,
+    message: ''
+  });
+
   const [data, setData] = useState([
     {
       number: "071 555 3954",
       github: "https://github.com/robynainsley21",
-      email: "rcarnowbusiness@gmail.com",
+      email: "robynainsley2i@gmail.com",
       linkedin: "https://www.linkedin.com/in/robyn-carnow-2b0762267/",
       location: "Cape Town, 7100",
       discord: "robbierobs",
     },
   ]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus({ submitted: true, error: false, message: 'Sending...' });
+
+    emailjs.send(
+      'service_pzxuxjd',  //EmailJS Services
+      'template_cwb1oni', //EmailJS Templates
+      {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        message: formData.message,
+        reply_to: data[0].email,
+      },
+      '7cTYrrwNxT-VbzAZc'   // EmailJS account
+    )
+    .then((response) => {
+      setStatus({
+        submitted: true,
+        error: false,
+        message: 'Message sent successfully!'
+      });
+      setFormData({ firstName: '', lastName: '', message: '' });
+    })
+    .catch((err) => {
+      setStatus({
+        submitted: false,
+        error: true,
+        message: 'Failed to send message. Please try again.'
+      });
+    });
+  }
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
   const StyledWrapper = styled.div`
     .login {
@@ -35,7 +86,6 @@ export default function Contact() {
       color: #e5e9f0;
       gap: 35px;
       background: #011627;
-      /* box-shadow: 16px 16px 32px #055393, -16px -16px 32px #055393; */
       border-radius: 8px;
       border: none;
       margin: auto;
@@ -111,32 +161,73 @@ export default function Contact() {
       background-color: #5565e8;
       color: white;
     }
+
+    /**form emailjs */
+    .status-message {
+      margin-top: 1em;
+      padding: 0.5em;
+      text-align: center;
+      &.success {
+        color: #4CAF50;
+      }
+      &.error {
+        color: #f44336;
+      }
+    }
+    /**form emailjs */
   `;
   return (
     <div id="contact">
       <h1>Let's get in touch.</h1>
 
       <div className="contact_container">
-        <StyledWrapper>
+      <StyledWrapper>
           <div className="container mb-5">
-            <div className="card">
+            <form className="card" onSubmit={handleSubmit}>
               <div className="inputBox">
-                <input type="text" required="required" />
+                <input 
+                  type="text" 
+                  required="required"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
+                />
                 <span className="user">First Name</span>
               </div>
               <div className="inputBox">
-                <input type="password" required="required" />
+                <input 
+                  type="text" 
+                  required="required"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                />
                 <span>Last Name</span>
               </div>
-              <div className="inputBox" name="message">
-                <input type="text" required />
+              <div className="inputBox">
+                <input 
+                  type="text" 
+                  required="required"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                />
                 <span>A Short Message</span>
               </div>
               <div className="flex gap-4">
-                <ButtonComp text="Send" />
-                <ButtonComp text="Clear" />
+                <ButtonComp text="Send" type="submit" />
+                <ButtonComp 
+                  text="Clear" 
+                  type="button"
+                  onClick={() => setFormData({ firstName: '', lastName: '', message: '' })}
+                />
               </div>
-            </div>
+              {status.message && (
+                <div className={`status-message ${status.error ? 'error' : 'success'}`}>
+                  {status.message}
+                </div>
+              )}
+            </form>
           </div>
         </StyledWrapper>
         <div className="contact_text">
