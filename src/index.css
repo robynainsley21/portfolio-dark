@@ -61,8 +61,8 @@ img[alt="logo"] {
   }
 }
 
-:is(#about, #resume, #contact, #footer) h1{
- margin: 2.5rem;
+:is(#about, #resume, #contact, #footer) h1 {
+  margin: 2.5rem;
 }
 
 .violet_text {
@@ -96,7 +96,10 @@ img[alt="logo"] {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   color: #1976d2;
   text-decoration: none;
-  transition: rgba(25, 118, 210, 0.5) 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: rgba(25, 118, 210, 0.5) 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
 .cta span {
@@ -104,7 +107,6 @@ img[alt="logo"] {
   letter-spacing: 2px;
   font-size: 14px;
   text-transform: uppercase;
-  
 }
 
 .cta svg {
@@ -136,12 +138,12 @@ img[alt="logo"] {
   height: 100vh;
   color: var(--text-muted);
 
-  & h1{
+  & h1 {
     margin: 0;
   }
 }
 
-.home_contact_btn{
+.home_contact_btn {
   height: 3.3rem;
   color: var(--text-white);
 }
@@ -167,7 +169,7 @@ img[alt="home_img"] {
 }
 
 /*hero icons*/
-/* From Uiverse.io by cybrejon */ 
+/* From Uiverse.io by cybrejon */
 .resume_download {
   text-decoration: none;
   color: var(--text-white);
@@ -915,6 +917,7 @@ img[alt="badge_img"] {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  margin-top: 5rem;
 }
 /* From Uiverse.io by eslam-hany */
 img[alt="achieve_img"] {
@@ -927,7 +930,7 @@ img[alt="achieve_img"] {
   color: var(--text-white);
   margin: 2rem auto;
   width: 300px;
-  height: 30rem;
+  height: 26rem;
   background-color: rgba(255, 255, 255, 0.074);
   border: 1px solid rgba(255, 255, 255, 0.222);
   display: flex;
@@ -944,7 +947,7 @@ img[alt="achieve_img"] {
     font-size: 14px;
   }
 
-  &:last-child img{
+  &:last-child img {
     width: 10rem;
   }
 
@@ -1098,8 +1101,12 @@ img[alt="exp_img"] {
 
 /* PROJECTS */
 #projects h1 {
-    padding: 6rem 0 5rem 2rem;
-  }
+  padding: 6rem 0 5rem 2rem;
+}
+
+#projects #root{
+  height: auto;
+}
 
 .project_container {
   display: flex;
@@ -1119,7 +1126,7 @@ img[alt="project_img"] {
   width: 18rem;
   font-family: var(--main-font);
   box-shadow: var(--glow) 0px 5px 15px;
-  background-color: #F9EDCC ;
+  background-color: #f9edcc;
 
   &:hover {
     transition: all 0.8s ease;
@@ -1223,12 +1230,12 @@ img[alt="project_img"] {
 /* CONTACT */
 
 /*FOOTER*/
-#footer{
+#footer {
   color: var(--violet);
   padding-bottom: 1rem;
 }
 
-.contact_footer_container{
+.contact_footer_container {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -1236,28 +1243,28 @@ img[alt="project_img"] {
   padding: 1rem 0;
 }
 
-.footer_copyright{
+.footer_copyright {
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-family: var(--main-font);
 }
 
-.footer_line{
+.footer_line {
   width: 20%;
   height: 1px;
-  content: '';
+  content: "";
   background-color: var(--violet);
 }
 
-.linkedin_btn{
+.linkedin_btn {
   text-decoration: none;
   color: var(--violet);
   border: 1px solid var(--violet);
   border-radius: 6px;
   transition: all 0.3s;
-  
-  &:hover{
+
+  &:hover {
     background-color: var(--violet);
     color: var(--text-white);
   }
@@ -1266,16 +1273,16 @@ img[alt="project_img"] {
 
 /* MOBILE */
 @media screen and (max-width: 768px) {
-  .desktop{
+  .desktop {
     display: none;
   }
 
-  .contact_footer_container{
+  .contact_footer_container {
     flex-wrap: wrap;
   }
-  
-  .linkedin_btn{
-    margin: .5rem;
+
+  .linkedin_btn {
+    margin: 0.5rem;
   }
 
   :is(#about, #resume) {
@@ -1301,14 +1308,14 @@ img[alt="project_img"] {
     margin: 3rem 0 1rem;
   }
 
- .home_intro{
-  width: 100%;
-  margin: 0;
- }
+  .home_intro {
+    width: 100%;
+    margin: 0;
+  }
 
- .text_animation{
-  font-size: 1.2rem;
- }
+  .text_animation {
+    font-size: 1.2rem;
+  }
 
   .content {
     font-size: 1rem;
@@ -1316,7 +1323,7 @@ img[alt="project_img"] {
     font-family: var(--main-font);
   }
 
-  .home_details{
+  .home_details {
     margin-top: 2rem;
   }
   /* HOME */
@@ -1349,7 +1356,7 @@ img[alt="project_img"] {
     margin: auto;
   }
 
-  .interest_card{
+  .interest_card {
     margin-bottom: 3rem;
   }
   /*interests section*/
@@ -1370,7 +1377,7 @@ img[alt="project_img"] {
     width: 100%;
   }
 
-  .skill_icon{
+  .skill_icon {
     width: 3rem;
     height: 4rem;
     margin: 1.5rem;
@@ -1378,7 +1385,7 @@ img[alt="project_img"] {
   /*RESUME*/
 
   /*PROJECTS*/
- :is( #projects, #contact) h1{
+  :is(#projects, #contact) h1 {
     padding: 5rem 0 3rem;
     margin: 0;
     text-align: center;
@@ -1400,7 +1407,7 @@ img[alt="project_img"] {
     }
   }
 
-  .contact_text_span{
+  .contact_text_span {
     font-size: 1rem;
   }
   /*CONTACT*/

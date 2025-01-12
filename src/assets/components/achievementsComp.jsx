@@ -55,9 +55,9 @@ export default function Achievements() {
             <p>{item.date}</p>
             <p>{item.details}</p>
           </div>
-         {item.site && <Link to={item.site} target="_blank">
-            <ButtonComp text="View" />
-          </Link>}
+         {item.site && 
+            <ButtonComp site={item.site} text="View" />
+         }
         </div>
       ))}
     </div>
